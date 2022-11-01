@@ -1,0 +1,22 @@
+.menu{
+    text-align:center;
+    font-size:40px;
+    color:blueviolet;
+    background-color: aqua;
+}
+.titulo{
+    text-align: center;
+    font-size: 40px;
+    color:red;
+    background-image: url('../imagenes/santiagomil.jpg');
+    height: 200px;
+}
+img{
+    width: 100px;
+    height: 100px;}
+.volver{
+    text-align: center;
+    background-color: black;
+    color:greenyellow;
+}
+

@@ -1,0 +1,2 @@
+Rut;Nombre;Edad;Mensaje 
+11111;marco lara;25;hola                         

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inscripcion Santiago a mil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <script src="js/evento.js"></script>
+        <script>
+            var pos=0;
+            var arreglo_eventos=new Array();
+            function procesar() {
+                var eventos = new evento();
+                var nombre_evento = document.getElementById("txtNombreEvento").value;
+                var pais = document.getElementById("cboPais").value;
+                var participo = document.getElementById("rbtSi").checked;
+                if (participo) {
+                    participo="Si";
+                } else {
+                    participo="No";
+                }
+                var compania=document.getElementById("txtCompania").value;
+                var descipcion=document.getElementById("txtDescripcion").value;
+                //alert("Nombre evento:"+nombre_evento+" Pais="+pais + " Compania="+compania
+                //        +"Participo="+participo+"Descripcion="+descipcion);
+                eventos.setNombre(nombre_evento);
+                eventos.setCompania(compania);
+                eventos.setPais(pais);
+                eventos.setParticipo(participo);
+                eventos.setDescripcion(descipcion);
+                alert(eventos.getEvento());
+                arreglo_eventos[pos]=eventos;
+                pos++;
+                alert("Evento Agregado en Pos:"+pos);
+                limpiar();
+            }
+            function limpiar(){
+                document.getElementById("txtNombreEvento").value="";
+                document.getElementById("cboPais").value="";
+                document.getElementById("rbtSi").checked=true;
+                document.getElementById("txtDescripcion").value="";
+                document.getElementById("txtCompania").value="";
+                document.formulario.txtNombreEvento.focus();
+            }
+            function listar(){
+                var todo='';
+                for(var i=0; i<arreglo_eventos.length;i++){
+                    var ob=arreglo_eventos[i];
+                    todo=todo+"\n"+ob.getEvento()+"<br>";
+                }
+                document.getElementById("resultado").innerHTML=todo;
+            }
+        </script>
+        <div class="titulo">
+            Ficha Inscripcion Santiago a mil
+        </div>
+        <div>
+            <form name="formulario">
+                <table border="1">
+                    <tr>
+                        <td colspan="2">Datos del Evento a Promocionar en Santiago a mil</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre Evento:</td>
+                        <td> <input type="text" name="txtNombreEvento" id="txtNombreEvento" value="" /> </td>  
+                    </tr>
+                    <tr>
+                        <td>Compañia:</td>
+                        <td> <input type="text" name="txtCompania" id="txtCompania" value="" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Pais:</td>
+                        <td> <select name="cboPais" id="cboPais">
+                                <option>Chile</option>
+                                <option>Peru</option>
+                                <option>Bolivia</option>
+                                <option>Francia</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Participo en Santiago a Mil?</td>
+                        <td> <input type="radio" name="participo" id="rbtSi" value="SI" />Si
+                            <input type="radio" name="participo" id="rbtNo" value="NO" />No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion del Evento</td>
+                        <td> <textarea name="txtDescripcion" id="txtDescripcion" rows="4" cols="20">
+                            </textarea> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Procesar" name="btnProcesar" onclick="procesar()"/>
+                            <input type="button" value="Limpiar" name="btnLimpiar" onclick="limpiar()"/>
+                            <input type="button" value="Listar" name="btnListar" onclick="listar()"/>
+                        </td>
+
+                    </tr>
+                </table>
+            </form>
+        </div>
+        <div id="resultado">
+            Resultado
+        </div>
+    </body>
+</html>

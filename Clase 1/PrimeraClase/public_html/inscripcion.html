@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>Inscripcion Santiago a mil</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    </head>
+    <body>
+        <script>
+            function procesar() {
+                var nombre_evento = document.getElementById("txtNombreEvento").value;
+                var pais = document.getElementById("cboPais").value;
+                alert(nombre_evento);
+                alert(pais);
+                var participo = document.getElementById("rbtSi").checked;
+                if (participo) {
+                    alert("participo");
+                } else {
+                    alert("Su primera vez");
+                }
+            }
+        </script>
+        <div class="titulo">
+            Ficha Inscripcion Santiago a mil
+        </div>
+        <div>
+            <form>
+                <table border="1">
+                    <tr>
+                        <td colspan="2">Datos del Evento a Promocionar en Santiago a mil</td>
+                    </tr>
+                    <tr>
+                        <td>Nombre Evento:</td>
+                        <td> <input type="text" name="txtNombreEvento" id="txtNombreEvento" value="" /> </td>  
+                    </tr>
+                    <tr>
+                        <td>Compañia:</td>
+                        <td> <input type="text" name="txtCompania" id="txtCompania" value="" /> </td>
+                    </tr>
+                    <tr>
+                        <td>Pais:</td>
+                        <td> <select name="cboPais" id="cboPais">
+                                <option>Chile</option>
+                                <option>Peru</option>
+                                <option>Bolivia</option>
+                                <option>Francia</option>
+                            </select></td>
+                    </tr>
+                    <tr>
+                        <td>Participo en Santiago a Mil?</td>
+                        <td> <input type="radio" name="participo" id="rbtSi" value="SI" />Si
+                            <input type="radio" name="participo" id="rbtNo" value="NO" />No
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Descripcion del Evento</td>
+                        <td> <textarea name="txtDescripcion" id="txtDescripcion" rows="4" cols="20">
+                            </textarea> </td>
+                    </tr>
+                    <tr>
+                        <td colspan="2">
+                            <input type="button" value="Procesar" name="btnProcesar" onclick="procesar()"/>
+                            <input type="reset" value="Limpiar" name="btnLimpiar" />
+                        </td>
+
+                    </tr>
+                </table>
+            </form>
+        </div>
+    </body>
+</html>

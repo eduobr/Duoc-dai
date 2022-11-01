@@ -1,0 +1,29 @@
+<?php
+  session_start(); //INICIO DE SESION
+  $_session["variable"]=Dato;
+?>
+
+<?php
+  session_start();
+  echo "usuario".$_session["variable"];
+?>
+
+<?php //inicio.php
+  session_start();
+  if(isset($_session["variable"])){
+      echo "usuario nombre:".$_session["variable"];
+  }else{
+      header(location:login.php);
+  }
+?>
+
+session_destroy(); elimina una sesion
+
+<?php 
+  session_start();
+  if(isset($_session["user"])){
+      $user=$_Session["user"];
+  }else{
+      header(location:login.php);
+  }
+?>

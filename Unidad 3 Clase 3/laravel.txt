@@ -1,0 +1,25 @@
+
+php artisan serve //para correr el servidor
+
+ctrl+c para terminar el servidor
+
+modificar archivo env
+
+DB_DATABASE=nombreBD
+DB_USERNAME=usuario
+DB_PASSWORD=contraseña
+
+en resources/views se hacen las vistas
+
+en resources/routes/web estan las rutas de las vistas
+
+php artisan make:model Pelicula -m //para crear el modelo
+
+php artisan make:controller PeliculaController --resources //crear controlador
+
+
+php artisan route:list
+
+en database/migrations create table //se crea la tabla
+
+php artisan migrate //migra las tablas

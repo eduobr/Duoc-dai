@@ -1,0 +1,17 @@
+Composer -v //para ver version de laravel
+
+1-Abrir carpeta www
+cd ..
+cd wamp64
+cd www
+
+2-crear proyecto en laravel
+composer create-prooject laravel/laravel nombre_proyecto "5.0.*" --prefer-dist
+
+3-cambiar nombre a app
+php artisan app:name cine
+
+4-cambiar parametros de la base de datos en el archivo env
+
+5-crear controlador
+php artisan make:controller PeliController

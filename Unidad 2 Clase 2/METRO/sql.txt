@@ -1,0 +1,28 @@
+SELECT * FROM encuesta LIMIT 100;
+DELIMITER @@
+CREATE PROCEDURE INSERTAR(IN RUT VARCHAR(12), IN NOMBRE VARCHAR(40),
+                            IN GEN VARCHAR(10), IN FRE VARCHAR(30),
+                            IN HOR VARCHAR(20), IN LIN VARCHAR(100),
+                            IN CAL VARCHAR(30), IN OBS VARCHAR(200))
+BEGIN
+  INSERT INTO ENCUESTA VALUES(RUT,NOMBRE,GEN,FRE,HOR,LIN,CAL,OBS);
+END @@
+DELIMITER;
+-------------------------------------------------------------------
+DELIMITER @@
+CREATE PROCEDURE ELIMINAR(IN P_RUT VARCHAR(12))
+BEGIN
+  DELETE FROM ENCUESTA WHERE RUT=P_RUT;
+END @@
+DELIMITER;
+-------------------------------------------------------------------
+DELIMITER @@
+CREATE PROCEDURE LISTAR()
+BEGIN
+  SELECT * FROM ENCUESTA;
+END @@
+DELIMITER;
+-------------------------------------------------------------------
+CALL INSERTAR('1','SIMIA','S','NUNCA','NUNCA','ARBOLES','MALA','MAS BANANAS');
+CALL ELIMINAR('1');
+CALL LISTAR();
